@@ -1,0 +1,325 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color: #f8f9fa; /* Light background color for the navbar */
+    padding: 1em;
+}
+
+.navbar-nav .nav-link {
+    color: #007bff; /* Blue text color */
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+}
+
+/* Ensure consistent underline for nav links */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #007bff; /* Blue underline */
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Dropdown Menu Styling */
+.navbar-nav .dropdown-menu {
+    background-color: #ffffff; /* White background for dropdown */
+    border: 1px solid #007bff; /* Blue border for dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    position: absolute; /* Ensure dropdown is positioned correctly */
+    z-index: 1000; /* Ensure dropdown is on top of other elements */
+    padding: 0.5em; /* Adjust padding as needed */
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+    color: #007bff; /* Blue text color */
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-decoration: none; /* Ensure no underline by default */
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    color: #007bff; /* Blue text color on hover */
+    text-decoration: underline; /* Blue underline on hover */
+    background-color: #ffffff; /* No background color change on hover */
+}
+
+/* Specific styling for the "By Grade" item */
+#nav-heading {
+    text-decoration: none; /* Remove underline by default */
+}
+
+#nav-heading:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* Ensure dropdown menu is displayed correctly */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+
+/* Custom Dropdown Link Styling */
+#nav-drop {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+#nav-drop:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #007bff; /* Blue color on hover */
+}
+/* This is for Slider Carousel CSS */
+/* Reset button background and border */
+.carousel-control-prev, .carousel-control-next, .carousel-control-toggle {
+    background: none;
+    border: none;
+    width: auto; /* Ensure the button only takes the width of the icon */
+    height: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjust icon size */
+.carousel-control-prev img,
+.carousel-control-next img,
+.carousel-control-toggle img {
+    width: 50px; /* Adjust the icon width */
+    height: 50px; /* Adjust the icon height */
+}
+
+/* Position Previous Button on the Left */
+#carousel-control-prev {
+    position: absolute;
+    top: 50%;
+    left: 50px; /* Adjust the left positioning */
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* Position Next Button on the Right */
+#carousel-control-next {
+    position: absolute;
+    top: 50%;
+    right: 140px; /* Adjust the right positioning */
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* Center Pause/Play Button */
+#carouselToggle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    cursor: pointer;
+}
+
+ /* Popup container */
+ .popup-container {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Popup content */
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Container for the Join Our Community section */
+.community-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #0d6efd; /* Background color for the container */
+    border-radius: 12px; /* Border radius for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+/* Toggle button */
+.toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Hide toggle button on large devices */
+@media (min-width: 1200px) {
+    .toggle-btn {
+        display: none;
+    }
+}
+
+/* Style for the vertical button with text and icons */
+.join-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d6efd; /* Primary color */
+    color: white;
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    padding: 10px;
+    font-size: 1rem; /* Adjust text size */
+    cursor: pointer;
+    text-orientation: sideways-right;
+    writing-mode: vertical-lr;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100px; /* Adjusted width for better spacing */
+}
+
+/* Hover effect for the entire button */
+.join-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the text in the button */
+.join-btn .text {
+    margin-bottom: 10px; /* Space between text and icons */
+}
+
+/* Style for the icons container */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px; /* Space between icons and button */
+}
+
+/* Style for the icons */
+.contact-info i {
+    font-size: 2rem; /* Large icons */
+    margin: 5px; /* Space around icons */
+    color: #fff; /* Default color for icons */
+    transition: transform 0.3s ease; /* Transition for scale effect */
+}
+
+/* WhatsApp icon color */
+.contact-info .whatsapp {
+    color: #25D366; /* WhatsApp green */
+}
+
+/* Envelope icon color */
+.contact-info .envelope {
+    color: white; /* White color */
+}
+
+/* Call icon color */
+.contact-info .call {
+    color: black; /* Black color */
+}
+
+/* Community group icon */
+.group-info {
+    margin-top: 10px; /* Space above the group icon */
+}
+
+.group-info .group {
+    font-size: 1.5rem; /* Medium size */
+    color: #fff; /* White color */
+}
+
+/* Specific hover effect for icons */
+.contact-info i:hover {
+    transform: scale(1.1); /* Slightly larger on hover */
+}
+
+/* Separator between the icons */
+.separator {
+    height: 2px;
+    width: 100%;
+    background-color: #fff; /* Match the container background */
+    margin: 10px 0; /* Space around the separator */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199.98px) {
+    .community-buttons {
+        max-height: 60px; /* Initial height to show only the toggle button */
+    }
+
+    .community-buttons.expanded {
+        max-height: 500px; /* Expand to show full content */
+    }
+}
+
+@media (min-width: 1200px) {
+    .community-buttons {
+        max-height: none; /* Show full content on large devices */
+    }
+}
+
+.toggle-btn.rotated {
+    transform: rotate(180deg);
+}
+
+
+.image-grid{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr ;
+    margin: 10px 10px 0px;
+}
+
+
+
